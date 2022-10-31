@@ -1,0 +1,28 @@
+buildscript {
+    ext.path_plugin = "${rootProject.rootDir.path}/plugin"
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url uri(path_plugin) }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20"
+
+        //导入插件的依赖
+        classpath 'com.zjh:codecopier:0.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url uri(path_plugin) }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
