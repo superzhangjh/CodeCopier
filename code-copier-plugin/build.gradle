@@ -7,7 +7,7 @@ plugins {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.zjh'
+            groupId = 'com.zjh.plugin'
             artifactId = 'codecopier'
             version = '0.0.1'
 
@@ -39,4 +39,10 @@ dependencies {
 
     //gson
     implementation 'com.google.code.gson:gson:2.10'
+
+    //自定义的注解
+    implementation 'com.zjh.codecopier:annotation:0.0.1'
+
+    // 协程核心库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
 }

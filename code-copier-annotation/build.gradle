@@ -1,0 +1,24 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.zjh.codecopier'
+            artifactId = 'annotation'
+            version = '0.0.1'
+
+            from components.java
+        }
+    }
+    repositories {
+        maven { url uri(rootProject.ext.path_plugin) }
+    }
+}

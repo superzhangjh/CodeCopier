@@ -1,3 +1,4 @@
 rootProject.name = "CodeCopier"
 include ':app'
 include ':code-copier-plugin'
+include ':code-copier-annotation'
